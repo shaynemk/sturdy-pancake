@@ -2,8 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.keller23.sturdypancake.MainActivity" >
+    <item
+        android:title="@string/action_alarms"
+        android:orderInCategory="100"
+        android:id="@+id/action_alarms"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:showAsAction="ifRoom" />
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         app:showAsAction="never" />
 </menu>

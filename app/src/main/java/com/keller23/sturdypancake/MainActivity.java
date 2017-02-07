@@ -1,5 +1,6 @@
 package com.keller23.sturdypancake;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Toast.makeText(this, "Settings in Progress", Toast.LENGTH_LONG).show();
+            return true;
+        } else if (id == R.id.action_alarms) {
+            startActivity(new Intent(getApplicationContext(),AlarmListActivity.class));
             return true;
         }
 
