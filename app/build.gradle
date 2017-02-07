@@ -7,9 +7,12 @@ android {
         applicationId "com.keller23.sturdypancake"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        //versionCode 1
+        def jenkinsBuild = System.getenv("BUILD_NUMBER") as String ?: "IDE"
+        versionName = "0.0.1-" + jenkinsBuild
+        //versionName "0.0.1-" + versionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "SturdyPancake_"+versionName)
     }
     buildTypes {
         release {
@@ -20,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -28,3 +31,5 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply plugin: 'com.google.gms.google-services'
